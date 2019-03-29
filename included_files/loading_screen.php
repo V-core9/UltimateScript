@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <div class="loadingScreen">
     <div class="slider background">
 	    <div class="line"></div>
