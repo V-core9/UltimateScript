@@ -1,4 +1,6 @@
+<?php
 
+?>
 
 
 <div class="footer">
