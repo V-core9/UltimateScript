@@ -1,54 +1,70 @@
 $(document).ready(function(){  
 
+    
     function setNotificationColor(level, message){
         
         var customId = Math.floor(Math.random() * 1000000);
         customId = "notification_"+customId;
+
         var result = message.split('|||');
 
         
-        $('.notificationsContainer').append('<div class="singleNotification" id="'+customId+'"><h3>'+result[0]+'</h3><p>'+result[1]+'</p><i class="fas fa-times closeNotification"></i></div>');
+        $('.notificationsContainer').append('<div class="singleNotification notif'+customId+'"><h3>'+result[0]+'</h3><p>'+result[1]+'</p><p class="timeOf">'+result[2]+'</p><i class="fas fa-times closeNotification"></i></div>');
+
+        $('.notificationsContainerSide').append('<div class="singleNotification side_notif'+customId+'"><h3>'+result[0]+'</h3><p>'+result[1]+'</p><p class="timeOf">'+result[2]+'</p><i class="fas fa-times closeNotification"></i></div>');
 
         
         if (level == '0'){
-            $('#'+customId).css('background', 'rgba(0,255,0,0.25)');
-            $('#'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.notif'+customId).css('background', 'rgba(0,255,0,0.35)');
+            $('.notif'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.side_notif'+customId).css('background', 'rgba(0,255,0,0.25)');
+            $('.side_notif'+customId).css('box-shadow', '0px 0px 5px white');
 
         } else if (level == '1'){
-            $('#'+customId).css('background', 'rgba(0,0,255,0.25)');
-            $('#'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.notif'+customId).css('background', 'rgba(0,0,255,0.35)');
+            $('.notif'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.side_notif'+customId).css('background', 'rgba(0,0,255,0.25)');
+            $('.side_notif'+customId).css('box-shadow', '0px 0px 5px white');
 
         } else if (level == '2'){
-            $('#'+customId).css('background', 'rgba(255,255,0,0.25)');
-            $('#'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.notif'+customId).css('background', 'rgba(255,255,0,0.35)');
+            $('.notif'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.side_notif'+customId).css('background', 'rgba(255,255,0,0.25)');
+            $('.side_notif'+customId).css('box-shadow', '0px 0px 5px white');
 
         } else if (level == '3'){
-            $('#'+customId).css('background', 'rgba(255,0,0,0.25)');
-            $('#'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.notif'+customId).css('background', 'rgba(255,0,0,0.35)');
+            $('.notif'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.side_notif'+customId).css('background', 'rgba(255,0,0,0.25)');
+            $('.side_notif'+customId).css('box-shadow', '0px 0px 5px white');
 
         } else if (level == '4'){
-            $('#'+customId).css('background', 'rgba(255,0,255,0.25)');
-            $('#'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.notif'+customId).css('background', 'rgba(255,0,255,0.35)');
+            $('.notif'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.side_notif'+customId).css('background', 'rgba(255,0,255,0.25)');
+            $('.side_notif'+customId).css('box-shadow', '0px 0px 5px white');
 
         } else if (level == '9'){
-            $('#'+customId).css('background', 'rgba(255,0,0,1)');
-            $('#'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.notif'+customId).css('background', 'rgba(255,0,0,1)');
+            $('.notif'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.side_notif'+customId).css('background', 'rgba(255,0,0,1)');
+            $('.side_notif'+customId).css('box-shadow', '0px 0px 5px white');
 
         };
 
         
         $('.closeNotification').click(function(){
-            $(this).parent('#'+customId).hide();
+            $(this).parent('.singleNotification').hide();
         });
 
 
 
 
 
-        $('#'+customId).delay( 99000 ).fadeOut( 500 );
+        $('.notif'+customId).delay( 10000 ).fadeOut( 500 );
         setTimeout(function() {
-            $('#'+customId).remove();
-          }, 99000);
+            $('.singleNotification'+customId).remove();
+          }, 15000);
     };
    
     
@@ -118,5 +134,10 @@ $(document).ready(function(){
    })
 
 
+
+
+   $('.closeSideNotifications').click(function (){
+    $('.notificationsContainerSide').toggleClass('show');
+});
 
    

@@ -2,6 +2,8 @@
 
 include '../db_config.php';
 
+include 'save_notifications.php';
+
 
 
 
@@ -26,7 +28,15 @@ if (!empty($_POST['usernameRegister']) AND !empty($_POST['emailRegister']) AND !
             
     
                 if ($conn->query($sql) === TRUE) {
-                    echo "0 <i class='fas fa-check-circle'></i>  Register|||New record created successfully";
+                    echo "0 <i class='fas fa-check-circle'></i>  Register|||New record created successfully|||". date("h:i:sa") ." ". date("Y.m.d");
+                    $sql = "SELECT user_id FROM users_info WHERE username=\"$username\"";
+                    $result = $conn->query($sql);
+                    while($row = $result->fetch_assoc()) {
+                        $_SESSION['userId'] =  $row["user_id"];
+                    };
+
+                    saveNotification($conn, '0', 'Register', $_SESSION['userId'], 'New record created successfully');
+                    
                     echo '</br>';
                     
                     echo 'Username: ';
@@ -42,25 +52,44 @@ if (!empty($_POST['usernameRegister']) AND !empty($_POST['emailRegister']) AND !
                     //echo $_POST['passwordRegisterSec'];
                     //echo '</br>';
                 } else {
-                    echo "9 <i class='fas fa-bug'></i>  Register|||Error: " . $sql . "<br>" . $conn->error;
+                    echo "9 <i class='fas fa-bug'></i>  Register|||Error: " . $sql . "<br>" . $conn->error . "|||". date("h:i:sa") ." ". date("Y.m.d");
+                    saveNotification($conn, '9', 'Register','0', 'Error: ' . $sql . '<br>' . $conn->error );
                 }
     
             } else {
     
-                echo "2 <i class='fas fa-unlock-alt'></i>  Register|||Passwords do not match!";
+                echo "2 <i class='fas fa-unlock-alt'></i>  Register|||Passwords do not match!|||". date("h:i:sa") ." ". date("Y.m.d");
+                saveNotification($conn, '2', 'Register','0', 'Passwords do not match!');
             }
     
         } else {
-            echo "1 <i class='fas fa-exclamation-triangle'></i>  Register|||$emailRegister is not a valid email address";
+            echo "1 <i class='fas fa-exclamation-triangle'></i>  Register|||$emailRegister is not a valid email address|||". date("h:i:sa") ." ". date("Y.m.d");
+            $sql = "SELECT user_id FROM users_info WHERE username=\"$username\"";
+            $result = $conn->query($sql);
+            while($row = $result->fetch_assoc()) {
+                $_SESSION['userId'] =  $row["user_id"];
+            };
+            saveNotification($conn, '1', 'Register', '0', $emailRegister.' is not a valid email address!');
+            
         }
 
     } else {
-        echo "4 <i class='fas fa-user-circle'></i>  Register|||User already exists!";
+        echo "4 <i class='fas fa-user-circle'></i>  Register|||User already exists!|||". date("h:i:sa") ." ". date("Y.m.d");
+        $sql = "SELECT user_id FROM users_info WHERE username=\"$username\"";
+        $result = $conn->query($sql);
+        while($row = $result->fetch_assoc()) {
+            $_SESSION['userId'] =  $row["user_id"];
+        };
+        saveNotification($conn, '4', 'Register', $_SESSION['userId'], 'User already exists!');
+        
     }
 
 } else {
-    echo "3 <i class='fas fa-question-circle'></i>  Register|||Please fill in the form right way.";
+    echo "3 <i class='fas fa-question-circle'></i>  Register|||Please fill in the form right way.|||". date("h:i:sa") ." ". date("Y.m.d");
+    saveNotification($conn, '3', 'Register', '0', 'Please fill in the form right way.');
+    
 }
+
 
 
 $conn->close();

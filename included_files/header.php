@@ -1,4 +1,5 @@
 <?php
+    include 'handlers/login_status.php';
 ?>
 <div class="topHeader">
     <div class="logo">
@@ -14,17 +15,15 @@
 
     <div class="rightMenu">
                 
-        <ul class="languagepicker large dropDown">
-            <a href="#nl"><li><img src="http://i65.tinypic.com/2d0kyno.png"/>Nederlands</li></a>
-            <a href="#en"><li><img src="http://i64.tinypic.com/fd60km.png"/>English</li></a>
-            <a href="#de" class="active"><li><img src="http://i63.tinypic.com/10zmzyb.png"/>German</li></a>
-            <a href="#fr"><li><img src="http://i65.tinypic.com/300b30k.png"/>Français</li></a>
-            <a href="#es"><li><img src="http://i68.tinypic.com/avo5ky.png"/>Español</li></a>
-            <a href="#it"><li><img src="http://i65.tinypic.com/23jl6bn.png"/>Italiano</li></a>
-        </ul>
-        <div class="userInfo">
-            <button class="logoutButton" style="position: absolute; z-index: 200;">Log Out</button>
-        </div>
+            <div class="userInfo dropDown topDrop">
+                <div class="heading"><i class="far fa-user"></i><?php echo $_SESSION['loggedUser']; ?></div>
+                <div class="dropList">
+                    <div class="dropEntry"><i class="fas fa-info"></i>Notifications</div>
+                    <div class="dropEntry"><i class="far fa-envelope"></i>Messages</div>
+                    <div class="dropEntry"><i class="far fa-user"></i>My Profile</div>
+                    <div class="dropEntry logoutButton"><i class="fas fa-sign-out-alt"></i>Log Out</div>
+                </div>
+            </div>
     </div>
 </div>
 
@@ -38,38 +37,98 @@
     <div class="accordion-container">
   <div class="set">
     <a href="#">
-      Vestibulum 
+      Dashboard 
       <i class="fa fa-plus"></i>
     </a>
     <div class="content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+      <ul>
+        <li class="dashboardPage"><i class="fa fa-cog"></i>Start Page</li>
+        <li class="cartPage"><i class="fa fa-question"></i>Cart</li>
+      <ul>
     </div>
   </div>
   <div class="set">
     <a href="#">
-      Phasellus 
+      Sales 
       <i class="fa fa-plus"></i>
     </a>
     <div class="content">
-      <p> Aliquam cursus vitae nulla non rhoncus. Nunc condimentum erat nec dictum tempus. Suspendisse aliquam erat hendrerit vehicula vestibulum.</p>
+      <ul>
+        <li class="usersSettings"><i class="fa fa-cog"></i>Orders</li>
+        <li class="registrationRequests"><i class="fa fa-question"></i>Returns</li>
+        <li class="registrationRequests"><i class="fa fa-users"></i>Vouchers</li>
+      <ul>
     </div>
   </div>
   <div class="set">
     <a href="#">
-      Praesent 
+      Products 
       <i class="fa fa-plus"></i>
     </a>
     <div class="content">
-      <p>Pellentesque aliquam ligula libero, vitae imperdiet diam porta vitae. sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+      <ul>
+        <li class="usersSettings"><i class="fa fa-cog"></i>Inventory</li>
+        <li class="registrationRequests"><i class="fa fa-question"></i>All Products</li>
+        <li class="registrationRequests"><i class="fa fa-users"></i>Categories</li>
+        <li class="usersSettings"><i class="fa fa-cog"></i>Tags</li>
+        <li class="usersSettings"><i class="fa fa-cog"></i>Manufacturers</li>
+      <ul>
     </div>
   </div>
   <div class="set">
     <a href="#">
-      Curabitur 
+      Comunications 
+      <i class="fa fa-plus"></i>
+    </a>
+    <div class="content">
+      <ul>
+        <li class="registrationRequests"><i class="fa fa-question"></i>Messages</li>
+        <li class="registrationRequests"><i class="fa fa-users"></i>Contact Messages</li>
+        <li class="registrationRequests"><i class="fa fa-users"></i>All Messages</li>
+        <li class="usersSettings"><i class="fa fa-cog"></i>Settings</li>
+      <ul>
+    </div>
+  </div>
+  <div class="set">
+    <a href="#">
+      Users 
       <i class="fa fa-plus"></i> 
     </a>
     <div class="content">
-      <p> Donec tincidunt consectetur orci at dignissim. Proin auctor aliquam justo, vitae luctus odio pretium scelerisque. </p>
+      <ul>
+        <li class="registrationRequests" onclick="openRegisterRequestPage()"><i class="fa fa-question"></i>Registration Requests</li>
+        <li class="allUsersPage"><i class="fa fa-users"></i>All users</li>
+        <li class="usersSettings"><i class="fa fa-cog"></i>Settings</li>
+      <ul>
+    </div>
+  </div>
+  <div class="set">
+    <a href="#">
+      System 
+      <i class="fa fa-plus"></i> 
+    </a>
+    <div class="content">
+      <ul>
+        <li class="locationsPage"><i class="fa fa-question"></i>Locations</li>
+        <li class="taxSettingsPage"><i class="fa fa-question"></i>Tax Settings</li>
+        <li class="loginSettingsPage"><i class="fa fa-users"></i>Login & Registration</li>
+        <li class="appSettingsPage"><i class="fa fa-cog"></i>System Settings</li>
+      <ul>
+    </div>
+  </div>
+  <div class="set">
+    <a href="#">
+      Reports 
+      <i class="fa fa-plus"></i> 
+    </a>
+    <div class="content">
+      <ul>
+        <li class="locationsPage"><i class="fa fa-question"></i>Reports</li>
+        <li class="invocesPage"><i class="fa fa-users"></i>Invoices</li>
+        <li class="taxSettingsPage"><i class="fa fa-question"></i>Who's online</li>
+        <li class="loginSettingsPage"><i class="fa fa-users"></i>Statistics</li>
+        <li class="allNotificationsPage" onclick="openAllNotificationsPage()"><i class="fa fa-users"></i>All Notifications</li>
+      <ul>
     </div>
   </div>
 </div>
@@ -231,12 +290,12 @@
 
 .mainMenuSide {
     width: 250px;
-    height: calc(100% - 100px);
+    height: calc(100% - 90px);
     display: block;
     position: fixed;
     top: 50px;
     left: 0px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(16, 16, 16, 0.5);
     z-index: 2000;
 }
 
@@ -270,9 +329,11 @@
   border-bottom: 1px solid #ddd;
 }
 .set{
-  position: relative;
-  width: 100%;
-  height: auto;
+    position: relative;
+    height: auto;
+    float: left;
+    display: block;
+    width: 100%;
 }
 .set > a{
     display: block;
@@ -284,6 +345,8 @@
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     transition: all 0.2s linear;
+    float: left;
+    width: calc(100% - 30px);
 }
 .set > a i{
   float: right;
@@ -296,12 +359,14 @@
 .set > a:hover {
     background: rgba(255, 255, 255, .15);
 }
-.content{
+.mainMenuSide .content{
     background-color: rgba(255, 255, 255, .15);
     border-bottom: 1px solid #fff;
     display: none;
+    float: left;
+    width: 100%;
 }
-.content p{
+.mainMenuSide .content p{
     padding: 10px 15px;
     margin: 0;
     color: white;

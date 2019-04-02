@@ -2,8 +2,6 @@
 <head>
 
 
-
-<link rel="stylesheet" type="text/css" href="assets/style/main.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
@@ -36,14 +34,15 @@ include 'included_files/loading_screen.php';
 
 </div>
 
+<div class="notificationsContainerSide">
+    <h2>Notifications History<i class="far fa-trash-alt clearAllNotifications"></i></h2>
+<button class="closeSideNotifications" onclick="hideSideNotif()">></button> 
+
+</div>
 
 
 
-<?php 
 
-    //include 'included_files/footer.php';
-
-?>
 
 </body>
 </html>

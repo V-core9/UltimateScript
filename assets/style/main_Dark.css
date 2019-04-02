@@ -1,0 +1,533 @@
+body {
+    filter: grayscale(1);
+    opacity: .9;
+    transition: 0.5s ease all;
+}
+
+body{
+    /* margin-top: 100px; */
+    font-family: 'Trebuchet MS', serif;
+    line-height: 1.6;
+    margin: 0px;
+    font-family: 'Anonymous Pro', monospace;
+    overflow: hidden;
+}
+
+body:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transition: 0.5s ease all;
+}
+
+
+.mainContainer {
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.mainMenuSide .content ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.mainMenuSide .content ul li {
+    padding: 5px;
+    margin: 2.5px 0px;
+}
+
+.mainMenuSide .content ul li i {
+    margin-right: 10px;
+    width: 30px;
+    text-align: center;
+}
+
+.mainMenuSide .content ul li:hover {
+    background: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+}
+.notificationsContainer {
+    /* display: none; */
+    width: 350px;
+    height: auto;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    /* background: rgba(59, 149, 255, .5); */
+    padding: 0px;
+    /* color: white; */
+    /* border-bottom: 3px solid #ffffff; */
+    overflow: hidden;
+    z-index: 8000;
+}
+
+
+.singleNotification {
+    letter-spacing: 1px;
+    font-weight: bold;
+    background: rgba(59, 149, 255, .5);
+    padding: 0px;
+    color: white;
+    border-bottom: 3px solid #ffffff;
+    margin: 10px;
+    opacity: 0.85;
+    transition: 0.25s ease all;
+    display: block;
+    position: relative;
+}
+
+
+.singleNotification:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+ .singleNotification h3 {
+    padding: 2.5px 15px;
+    background: rgba(255, 255, 255, .1);
+    margin: 0px;
+}
+
+ .singleNotification p {
+    padding: 5px 15px;
+}
+
+.closeNotification {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.notificationsContainer .singleNotification p {
+    margin: 0px;
+}
+
+.closeNotification:hover {
+    color: black;
+}
+
+
+
+
+
+.mainContainer:after {
+    content: " ";
+    position: absolute;
+    top: 0px;
+    z-index: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    color: black;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(0, 0, 0, 0.5) 40px, rgba(0, 0, 0, 0.5) 100px), linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.75));
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 125s alternate infinite;
+    -moz-animation: Gradient 125s alternate infinite;
+    animation: Gradient 125s alternate infinite;
+  }
+
+  body:hover .mainContainer:after{
+    -webkit-animation-duration: 265s;
+    -moz-animation-duration: 265s;
+    animation-duration: 265s;
+  }
+
+
+
+
+
+@-webkit-keyframes movingBackgrounds {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes movingBackgrounds {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes movingBackgrounds {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+
+
+  
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+
+.singleNotification p.timeOf {
+    font-size: 11px;
+    padding: 0px 15px;
+    color: #a0a0a0;
+    /* background: rgba(255, 255, 255, 0.15); */
+    /* border-top: 1px solid white; */
+    margin-top: 10px;
+    text-align: right;
+}
+
+
+
+
+.contentContainerApp {
+    position: fixed;
+    top: 50px;
+    left: 250px;
+    background: rgba(0, 0, 0, .85);
+    width: calc(100% - 250px);
+    height: calc(100% - 90px);
+    z-index: 5;
+    overflow-y: auto;
+}
+
+.contentContainerApp::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 0px;
+	background-color: #000000;
+}
+
+.contentContainerApp::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #000000;
+}
+
+.contentContainerApp::-webkit-scrollbar-thumb
+{
+	border-radius: 0px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+
+
+
+
+.notificationsContainerSide {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    width: 0px;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.95);
+    transition: 0.25s ease all;
+}
+
+
+.notificationsContainerSide.show {
+    width: 400px;
+    z-index: 8000;
+    border-left: 1px solid rgba(59, 149, 255, .35);
+    overflow-y: auto;
+    padding-top: 50px;
+}
+
+
+
+.notificationsContainerSide.show button.closeSideNotifications {
+    position: fixed;
+    right: 380px;
+    top: 0px;
+    height: 100%;
+    background: rgba(243, 243, 243, 0.15);
+    border: none;
+    cursor: pointer;
+    transition: 0.15s ease all;
+    color: rgb(59, 149, 255);
+}
+
+button.closeSideNotifications:hover {
+    background: rgba(243, 243, 243, 0.25);
+}
+
+
+.notificationsContainerSide .singleNotification {
+    margin-left: 30px;
+}
+
+
+
+button.showNotifications {
+    float: right;
+    height: 40px;
+    border: none;
+    background: #00000061;
+    color: gray;
+    cursor: pointer;
+}
+
+button.showNotifications:hover {
+    background: gray;
+    color: white;
+}
+
+.notificationsContainerSide h2 {
+    color: #e6e6e6;
+    width: 360px;
+    top: 0px;
+    position: fixed;
+    margin-left: 20px;
+    padding: 5px 10px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgb(59, 149, 255);
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 200;
+    text-align: left;
+}
+
+.notificationsContainerSide.show .fa-trash-alt {
+    float: right;
+    padding: 7px;
+    cursor: pointer;
+    color: gray;
+}
+
+.notificationsContainerSide.show .fa-trash-alt:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+
+.dropList {
+    font-size: 0px;
+    overflow: hidden;
+    height: 0px;
+}
+
+.dropDown.topDrop.show .dropList {
+    overflow: auto;
+    font-size: 16px;
+    float: left;
+    margin: 0px;
+}
+
+.dropDown.topDrop .heading {
+    width: 147px;
+    float: left;
+    padding: 10px;
+    /* font-size: 20px; */
+    cursor: pointer;
+}
+
+.userInfo {
+    float: left;
+    width: 167.5px;
+    display: inline-block;
+    background: #0000008f;
+    line-height: 30px;
+    border-top: 0px;
+}
+
+.dropDown.topDrop.show .dropList {transition: 0.25s ease all;width: 100%;height: auto;}
+
+.dropDown i {
+    margin-right: 10px;
+}
+
+.dropEntry {
+    padding: 10px;
+}
+
+
+
+.dropDown.topDrop.show {
+    border: 1px solid gray;
+}
+
+.dropEntry:hover {
+    background: rgba(255, 255, 255, .15);
+    cursor: pointer;
+}
+
+.dropDown.topDrop.show .heading {
+    cursor: auto;
+}
+
+
+
+
+.pageHeading {
+    padding: 0px;
+}
+
+.devider {
+    width: calc(100% - 22px);
+    border: 1px solid rgb(59, 149, 255);
+    padding: 0px;
+    margin: 0px 10px;
+    float: left;
+    clear: both;
+}
+
+.singleSetting {
+    padding: 20px;
+    display: block;
+    width: calc(100% - 40px);
+    float: left;
+}
+
+.singleSetting:hover{
+    background: rgba(255, 255, 255, .15);
+}
+
+.singleSettingInfo, .singleSettingOptions {
+    width: 50%;
+    float: left;
+}
+
+.singleSettingInfo {
+    text-align: left;
+}
+
+.singleSettingOptions {
+    text-align: right;
+}
+
+.singleHeading i{
+    display: inline-block;
+    color: #a4a4a4;
+    font-size: 40px;
+    float: left;
+}
+
+
+.singleHeading h3{
+    display: inline-block;
+    float: left;
+    font-size: 20px;
+    line-height: 40px;
+    color: #a4a4a4;
+    margin: 0px 20px;
+}
+
+.singleSetting:hover h3, .singleSetting:hover i, .singleSetting:hover .singleInfoDetails{
+    color: white;
+}
+
+.singleSetting select {
+    background: black;
+    color: white;
+    font-size: 20px;
+    padding: 5px 20px;
+    min-width: 185px;
+}
+
+
+
+.singleInfoDetails {
+    float: left;
+    clear: both;
+    font-size: 12px;
+    color: gray;
+}
+
+
+
+.pageHeading h2 {
+    width: calc(50% - 40px);
+    padding: 0px 20px;
+    float: left;
+}
+
+.optionsHeader  {
+    width: calc(50%);
+    float: right;
+    text-align: right;
+}
+
+.optionsHeader .saveUserSettings, .optionsHeader .cancelSave {
+    border: 0px;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.optionsHeader .saveUserSettings i, .optionsHeader .cancelSave i{
+    margin-right: 10px;
+}
+
+.optionsHeader .saveUserSettings{
+    background: rgba(0, 255, 0, .35);
+    color: #e2e2e2;
+}
+
+.optionsHeader .cancelSave{
+    background: rgba(255, 0, 0, .35);
+    color: #e2e2e2;
+
+}
+
+.optionsHeader .saveUserSettings:hover{
+    background: rgba(0, 255, 0, .5);
+    color: white;
+}
+
+.optionsHeader .cancelSave:hover{
+    background: rgba(255, 0, 0, .5);
+    color: white;
+
+}

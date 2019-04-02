@@ -1,11 +1,11 @@
-<?php
 
-?>
 
 
 <div class="footer">
-    <div class="logo">
-        LOGO INFO
+    <div class="leftOptions">
+            <button class="fullScreenButton" style=""><i class="fas fa-expand-arrows-alt"></i></button>
+            <button class="appSettingsButton" style=""><i class="fas fa-cogs"></i></button>
+            <button class="logoutButton" style=""><i class="fas fa-sign-out-alt"></i></button>
     </div>
     <div class="centerMenu">
         <ul>
@@ -25,9 +25,7 @@
             <a href="#es"><li><img src="http://i68.tinypic.com/avo5ky.png"/>Español</li></a>
             <a href="#CLOSE"><li><img src="http://i65.tinypic.com/23jl6bn.png"/>XXXX</li></a>
         </ul>
-        <div class="userInfo">
-            <button class="logoutButton" style="position: absolute; z-index: 200;">Log Out</button>
-        </div>
+        <button class="showNotifications" style=""><i class="far fa-list-alt"></i></button>
     </div>
 </div>
 
@@ -41,7 +39,7 @@
 
 .footer {
     width: 100%;
-    height: 50px;
+    height: 40px;
     background: rgba(255, 255, 255, 0.25);
     z-index: 100;
     bottom: 0px;
@@ -49,9 +47,9 @@
     left: 0px;
 }
 
-.footer .logo {
+.footer .leftOptions {
     width: 250px;
-    height: 50px;
+    height: 40px;
     background: rgba(0, 0, 0, 0.15);
     float: left;
 }
@@ -59,13 +57,13 @@
 .footer .centerMenu {
     width: 500px;
     float: left;
-    height: 50px;
+    height: 40px;
 }
 
 .footer div.centerMenu > ul li {
     display: inline-block;
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
+    line-height: 40px;
     padding: 0px 10px;
 }
 
@@ -82,7 +80,7 @@
     max-width: 250px;
     width: 250px;
     display: block;
-    height: 48px;
+    height: 38px;
     background: rgba(0, 0, 0, 0.15);
     float: right;
     }
@@ -95,7 +93,7 @@
     background-color: rgba(0, 0, 0, 0.75);
     display: inline-block;
     padding: 0;
-    height: 48px;
+    height: 38px;
     overflow: hidden;
     transition: all .3s ease;
     margin: 0;
@@ -116,7 +114,7 @@
 .footer .languagepicker li {
     display: block;
     padding: 0px 20px;
-    line-height: 50px;
+    line-height: 40px;
     /* border-top: 1px solid #EEE; */
     height: 0px;
     display: block;
@@ -149,9 +147,28 @@
 	The first language is 40px heigh, 
 	the others are 41px
 	*/
-    height: 305px;
-    top: -257px;
+    height: 245px;
+    top: -197px;
     position: relative;
+}
+
+
+
+.footer .leftOptions button {
+    width: 83.25px;
+    float: left;
+    font-size: 20px;
+    padding: 10px;
+    background: transparent;
+    color: #828282;
+    cursor: pointer;
+    border: none; 
+
+}
+
+.footer .leftOptions button:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
 }
 </style>
 

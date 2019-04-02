@@ -4,6 +4,44 @@
 
 $(document).ready(function(){
 
+
+
+
+
+
+
+
+    $(".fullScreenButton").click(function(){
+
+        if (!document.fullscreenElement &&    // alternative standard method
+            !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+          if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+          } else if (document.documentElement.msRequestFullscreen) {
+            document.documentElement.msRequestFullscreen();
+          } else if (document.documentElement.mozRequestFullScreen) {
+            document.documentElement.mozRequestFullScreen();
+          } else if (document.documentElement.webkitRequestFullscreen) {
+            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+        }
+    });
+
+
+    $('.showNotifications').click(function (){
+        $('.notificationsContainerSide').toggleClass('show');
+    });
+
    
     $(".logoutButton").click(function(){
     
@@ -17,6 +55,9 @@ $(document).ready(function(){
 
                 if (helpNumber == '0'){
                     $('.mainContainer').load('login.php');
+                    if ($('.notificationsContainerSide.show').length > 0){
+                        $('.notificationsContainerSide.show').removeClass('show');
+                    }
                 }
 
             }
@@ -24,6 +65,38 @@ $(document).ready(function(){
     
     
     });
+
+
+
+
+
+    
+
+   
+    $(".appSettingsButton").click(function(){
+
+        $.ajax({
+
+            url: 'included_files/modules/appSettings/index.php',
+            dataType: 'html',
+            success: function(data) {
+                 //handle data object containing the html
+                 $('.contentContainerApp').html(data);
+            },
+            error: function(xhr, error){
+                //generic error callback, you'll end up here when your file doesnt exist
+                alert('error');
+            }
+        
+        });
+    });
+
+
+
+
+
+
+
    
     function setNotificationColor(level, message){
         
@@ -33,47 +106,57 @@ $(document).ready(function(){
         var result = message.split('|||');
 
         
-        $('.notificationsContainer').append('<div class="singleNotification" id="'+customId+'"><h3>'+result[0]+'</h3><p>'+result[1]+'</p><i class="fas fa-times closeNotification"></i></div>');
+        $('.notificationsContainer').append('<div class="singleNotification notif'+customId+'"><h3>'+result[0]+'</h3><p>'+result[1]+'</p><p class="timeOf">'+result[2]+'</p><i class="fas fa-times closeNotification"></i></div>');
+
+        $('.notificationsContainerSide').append('<div class="singleNotification side_notif'+customId+'"><h3>'+result[0]+'</h3><p>'+result[1]+'</p><p class="timeOf">'+result[2]+'</p><i class="fas fa-times closeNotification"></i></div>');
 
         
         if (level == '0'){
-            $('#'+customId).css('background', 'rgba(0,255,0,0.25)');
-            $('#'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.notif'+customId).css('background', 'rgba(0,255,0,0.35)');
+            $('.notif'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.side_notif'+customId).css('background', 'rgba(0,255,0,0.25)');
+            $('.side_notif'+customId).css('box-shadow', '0px 0px 5px white');
 
         } else if (level == '1'){
-            $('#'+customId).css('background', 'rgba(0,0,255,0.25)');
-            $('#'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.notif'+customId).css('background', 'rgba(0,0,255,0.35)');
+            $('.notif'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.side_notif'+customId).css('background', 'rgba(0,0,255,0.25)');
 
         } else if (level == '2'){
-            $('#'+customId).css('background', 'rgba(255,255,0,0.25)');
-            $('#'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.notif'+customId).css('background', 'rgba(255,255,0,0.35)');
+            $('.notif'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.side_notif'+customId).css('background', 'rgba(255,255,0,0.25)');
 
         } else if (level == '3'){
-            $('#'+customId).css('background', 'rgba(255,0,0,0.25)');
-            $('#'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.notif'+customId).css('background', 'rgba(255,0,0,0.35)');
+            $('.notif'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.side_notif'+customId).css('background', 'rgba(255,0,0,0.25)');
 
         } else if (level == '4'){
-            $('#'+customId).css('background', 'rgba(255,0,255,0.25)');
-            $('#'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.notif'+customId).css('background', 'rgba(255,0,255,0.35)');
+            $('.notif'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.side_notif'+customId).css('background', 'rgba(255,0,255,0.25)');
 
         } else if (level == '9'){
-            $('#'+customId).css('background', 'rgba(255,0,0,1)');
-            $('#'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.notif'+customId).css('background', 'rgba(255,0,0,1)');
+            $('.notif'+customId).css('box-shadow', '0px 0px 5px white');
+            $('.side_notif'+customId).css('background', 'rgba(255,0,0,1)');
+            $('.side_notif'+customId).css('box-shadow', '0px 0px 5px white');
 
         };
 
         
         $('.closeNotification').click(function(){
-            $(this).parent('#'+customId).hide();
+            $(this).parent('.singleNotification').hide();
         });
 
 
 
 
 
-        $('#'+customId).delay( 10000 ).fadeOut( 500 );
+        $('.notif'+customId).delay( 10000 ).fadeOut( 500 );
         setTimeout(function() {
-            $('#'+customId).remove();
+            $('.singleNotification'+customId).remove();
           }, 15000);
     };
    
@@ -129,3 +212,27 @@ $(document).ready(function(){
 
 
    })
+
+
+
+
+
+
+$('.clearAllNotifications').click(function (){
+    $('.singleNotification').fadeOut(250);
+    $('.singleNotification').delay(300).remove();
+});
+
+
+function hideSideNotif(){
+    $('.notificationsContainerSide').toggleClass('show');
+}
+
+
+function openAllNotificationsPage(){
+    $('.contentContainerApp').load('included_files/modules/allNotifications/index.php')
+}
+
+function openRegisterRequestPage(){
+    $('.contentContainerApp').load('included_files/modules/registerRequests/index.php')
+}

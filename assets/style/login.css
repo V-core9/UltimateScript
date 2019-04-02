@@ -101,6 +101,9 @@ li.middleText {
 }
 
 
+.container.loginPage h2, .container.loginPage label {
+    color: white;
+}
 
 
 

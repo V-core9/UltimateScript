@@ -1,0 +1,47 @@
+.singleRequest {
+    margin: 2.5px 20px;
+    width: calc(100% - 30px);
+    float: left;
+    background: rgba(251, 251, 251, .15);
+}
+
+.singleRequest p {
+    display: inline-block;
+    padding: 5px 20px;
+    width: calc(20% - 40px);
+}
+
+.singleRequest:hover {
+    background: rgba(255, 255, 255, .25);
+}
+
+.singleRequest p.button {
+    cursor: pointer;
+    color: #3399cc;
+    width: auto;
+    background: rgba(51, 153, 204, .25);
+}
+
+.singleRequest p.button:hover {
+    background: rgba(51, 153, 204, .5);
+    color: white;
+}
+
+
+.singleRequest.first {
+    background: transparent;
+    padding: 0px;
+    margin: 0px 15px;
+}
+
+.singleRequest.first p {
+    margin: 0px;
+}
+
+.singleRequest:hover {
+    transform: scale(1.005);
+}
+
+.singleRequest.first:hover {
+    transform: none;
+}

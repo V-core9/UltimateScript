@@ -1,0 +1,4 @@
+<?php
+?>
+
+YEAAA INDEX PRVI
