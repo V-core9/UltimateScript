@@ -11,11 +11,15 @@ Right now it covers levels of notification (success, warning, error...etc), info
 
 New user will require approval currently, will implement options for this.
 So someone how can login can currently approve, there is no user levels added yet.
-Every action is logged and we can filter notifications by user, level, module and date.(on screenshot there is only dashboard page shown, this is on other dedicated for notifications with the idea of "9000 level" access to it....when privleges are implemented).
-
-This is user approval and dashboard pages.
 ![alt text](https://raw.githubusercontent.com/MyUserNameIsMyUserName/Login-Register-PHP/master/assets/images/login.png)
 
+
+
+Every action is logged and we can filter notifications by user, level, module and date.(dedicated page for notifications with the idea of "9000 level" access to it....when privleges are implemented ).
+![alt text](https://raw.githubusercontent.com/MyUserNameIsMyUserName/Login-Register-PHP/master/assets/images/login4.png)
+
+
+Dashboard showing latest notifications and users online.
 ![alt text](https://raw.githubusercontent.com/MyUserNameIsMyUserName/Login-Register-PHP/master/assets/images/login2.png)
 
 
