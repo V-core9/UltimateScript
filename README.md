@@ -9,8 +9,8 @@ Right now it covers levels of notification (success, warning, error...etc), info
 
 ![alt text](https://raw.githubusercontent.com/MyUserNameIsMyUserName/Login-Register-PHP/master/assets/images/screenshot_6.png)
 
-New user will require approval currently, will implement options for this.
-So someone how can login can currently approve, there is no user levels added yet.
+New user will need approval currently, will implement options for this.
+So someone who can login can currently approve, there is no user levels added yet. 
 ![alt text](https://raw.githubusercontent.com/MyUserNameIsMyUserName/Login-Register-PHP/master/assets/images/login.png)
 
 
