@@ -15,3 +15,7 @@ And after you login:
 ![alt text](https://raw.githubusercontent.com/MyUserNameIsMyUserName/Login-Register-PHP/master/assets/images/login.png)
 
 ![alt text](https://raw.githubusercontent.com/MyUserNameIsMyUserName/Login-Register-PHP/master/assets/images/login2.png)
+
+Every user can set their own theme for app, right now only dark and light(which is inverted dark, didn't had time)...second 2 options are just placeholders right now.
+
+![alt text](https://raw.githubusercontent.com/MyUserNameIsMyUserName/Login-Register-PHP/master/assets/images/login3.png)
