@@ -8,3 +8,10 @@ Right now it covers levels of notification (success, warning, error...etc), info
 ![alt text](https://raw.githubusercontent.com/MyUserNameIsMyUserName/Login-Register-PHP/master/assets/images/Screenshot_5.png)
 
 ![alt text](https://raw.githubusercontent.com/MyUserNameIsMyUserName/Login-Register-PHP/master/assets/images/screenshot_6.png)
+
+And after you login:
+
+
+![alt text](https://raw.githubusercontent.com/MyUserNameIsMyUserName/Login-Register-PHP/master/assets/images/login.png)
+
+![alt text](https://raw.githubusercontent.com/MyUserNameIsMyUserName/Login-Register-PHP/master/assets/images/login2.png)
