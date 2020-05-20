@@ -18,12 +18,12 @@
     <div class="rightMenu">
                 
         <ul class="languagepicker large dropDown">
-            <a href="#nl"><li><img src="http://i65.tinypic.com/2d0kyno.png"/>Nederlands</li></a>
-            <a href="#en"><li><img src="http://i64.tinypic.com/fd60km.png"/>English</li></a>
-            <a href="#de" class="active"><li><img src="http://i63.tinypic.com/10zmzyb.png"/>German</li></a>
-            <a href="#fr"><li><img src="http://i65.tinypic.com/300b30k.png"/>Français</li></a>
-            <a href="#es"><li><img src="http://i68.tinypic.com/avo5ky.png"/>Español</li></a>
-            <a href="#CLOSE"><li><img src="http://i65.tinypic.com/23jl6bn.png"/>XXXX</li></a>
+            <a href="#nl"><li>Nederlands</li></a>
+            <a href="#en"><li>English</li></a>
+            <a href="#de" class="active"><li>German</li></a>
+            <a href="#fr"><li>Français</li></a>
+            <a href="#es"><li>Español</li></a>
+            <a href="#CLOSE"><li>XXXX</li></a>
         </ul>
         <button class="showNotifications" style=""><i class="far fa-list-alt"></i></button>
     </div>

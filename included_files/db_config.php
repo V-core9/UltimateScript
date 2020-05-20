@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$username = "loginsystemdb";
-$password = "loginsystemdb";
-$dbname = "loginsystemdb";
+$username = "login_rework_20200520";
+$password = "login_rework_20200520";
+$dbname = "login_rework_20200520";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

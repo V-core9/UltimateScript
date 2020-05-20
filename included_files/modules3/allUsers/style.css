@@ -1,0 +1,36 @@
+.singleUser {
+    float: left;
+    background: rgba(255, 255, 255, .15);
+    margin: 2.5px 15px;
+    width: calc(100% - 30px);
+}
+
+.singleUser p {
+    display: inline-block;
+    padding: 5px 10px;
+    width: calc(15% - 20px);
+}
+
+.singleUser.headingInfo {
+    background: transparent;
+    margin: 0px 15px;
+}
+
+.singleUser.headingInfo p {
+    margin: 0px;
+}
+
+.singleUser p.button {
+    width: auto;
+    background: rgba(0, 255, 0, .25);
+    cursor: pointer;
+}
+
+.singleUser p.button:hover {
+    background: rgba(0, 255, 0, .35);
+}
+
+.singleUser:hover {
+    transform: scale(1.005);
+    background: rgba(255, 255, 255, .25);
+}

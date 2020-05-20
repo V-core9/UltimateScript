@@ -13,7 +13,7 @@ if (!isset($_SESSION['loggedUser'])) {
     $_SESSION['loggedUser'] = 'NULL';
 }
 
-include 'included_files/loading_screen.php';
+include 'included_files/templates/loading_screens/heartpuls.php';
 
 ?>
 

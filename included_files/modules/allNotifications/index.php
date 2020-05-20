@@ -74,6 +74,6 @@ include '../../db_config.php';
     </div>
 </div>
 
-<script src="included_files/modules/allNotifications/allNotifications.js"></script>
+<script src="included_files/modules/allNotifications/allNotifications.js?updated=1"></script>
 
-<link rel="stylesheet" href="included_files/modules/allNotifications/style.css" >
+<link rel="stylesheet" href="included_files/modules/allNotifications/style.css?updated=1" >

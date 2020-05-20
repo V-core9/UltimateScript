@@ -2,18 +2,19 @@
     display: inline-block;
     margin: 0px;
     padding: 0px;
-    float: left;
-    border: 1px solid gray;;
+    border: 1px solid gray;
     padding: 5px;
-    min-height: 60px;
 }
 
 .notificationsList .singleNotification {
     float:left;
     width: calc(100% - 50px);
     margin: 2.5px 25px;
-    min-height: 65px;   
     border-bottom: none;
+    display: flex;
+    min-height: 0;
+    float: none;
+    clear: both;
 }
 
 

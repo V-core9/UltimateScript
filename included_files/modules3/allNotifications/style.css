@@ -1,0 +1,163 @@
+.notificationsList .singleNotification p {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    border: 1px solid gray;;
+    padding: 5px;
+    min-height: 60px;
+}
+
+.notificationsList .singleNotification {
+    float:left;
+    width: calc(100% - 50px);
+    margin: 2.5px 25px;
+    min-height: 65px;   
+    border-bottom: none;
+}
+
+
+.notificationsList .singleNotification:hover {
+    transform: scale(1.005);
+
+}
+
+.notificationsList .singleNotification p:nth-child(1){
+    width: calc(7.5% - 12px);
+}
+
+.notificationsList .singleNotification p:nth-child(2){
+    width: calc(7.5% - 12px);
+
+}
+
+.notificationsList .singleNotification p:nth-child(3){
+    width: calc(12.5% - 12px);
+
+}
+
+.notificationsList .singleNotification p:nth-child(4){
+    width: calc(10% - 12px);
+
+}
+
+.notificationsList .singleNotification p:nth-child(5){
+    width: calc(22.5% - 12px);
+
+}
+
+.notificationsList .singleNotification p:nth-child(6){
+    width: calc(15% - 12px);
+
+}
+
+.notificationsList .singleNotification p:nth-child(7){
+    width: calc(12.5% - 12px);
+
+}
+
+.notificationsList .singleNotification p:nth-child(8){
+    width: calc(12.5% - 12px);
+
+}
+
+
+.notificationsList .singleNotification.headingInfo {
+    background: transparent;
+    min-height: 0px;
+}
+
+.singleNotification.headingInfo p {
+    border: 1px solid transparent;
+    min-height: 0px;
+}
+
+
+.level0{
+    background: rgba(0,255,0,0.35)!important;
+}
+
+.level1{
+    background: rgba(0,0,255,0.35)!important;
+}
+
+.level2{
+    background: rgba(255,255,0,0.35)!important;
+}
+
+.level3{
+    background: rgba(255,0,0,0.35)!important;
+}
+
+.level4{
+    background: rgba(255,0,255,0.35)!important;
+}
+
+.level5{
+    background: rgba(0,255,0,0.35)!important;
+}
+
+.level6{
+    background: rgba(0,255,0,0.35)!important;
+}
+
+.level7{
+    background: rgba(0,255,0,0.35)!important;
+}
+
+.level8{
+    background: rgba(0,255,0,0.35)!important;
+}
+
+.level9{
+    background: rgba(255,0,0,1)!important;
+}
+
+
+
+
+.filterNotifications {
+    width: 100%;
+    float: left;
+    clear: both;
+}
+
+.filterNotifications .header {
+    padding: 10px 20px;
+    text-decoration: underline;
+}
+
+
+.filterNotifications .filters {
+    padding: 0px 20px;
+}
+
+.filterNotifications .filters .single {
+    display: inline-block;
+    min-width: 12.5%;
+}
+
+.filterNotifications .filters .single select {
+    width: 100%;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.filterNotifications .filters .single h3 {
+    margin: 0px;
+}
+
+button.filterNotificationsButton {
+    float: right;
+    margin: 0px 30px;
+    font-size: 20px;
+    color: white;
+    background: green;
+    border: 0px;
+    padding: 10px 20px;
+}
+
+button.filterNotificationsButton:hover {
+    cursor: pointer;
+    background: darkgreen;
+}

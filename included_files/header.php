@@ -36,22 +36,22 @@
 
     <div class="accordion-container">
   <div class="set">
-    <a href="#">
+    <p class="menu-heading">
       Dashboard 
       <i class="fa fa-plus"></i>
-    </a>
+    </p>
     <div class="content">
       <ul>
-        <li class="dashboardPage"><i class="fa fa-cog"></i>Start Page</li>
+        <li class="dashboardPage" onclick="openDashboardPage()"><i class="fa fa-cog"></i>Start Page</li>
         <li class="cartPage"><i class="fa fa-question"></i>Cart</li>
       <ul>
     </div>
   </div>
   <div class="set">
-    <a href="#">
+    <p class="menu-heading">
       Sales 
       <i class="fa fa-plus"></i>
-    </a>
+    </p>
     <div class="content">
       <ul>
         <li class="usersSettings"><i class="fa fa-cog"></i>Orders</li>
@@ -61,28 +61,44 @@
     </div>
   </div>
   <div class="set">
-    <a href="#">
+    <p class="menu-heading">
       Products 
       <i class="fa fa-plus"></i>
-    </a>
+    </p>
     <div class="content">
       <ul>
         <li class="usersSettings"><i class="fa fa-cog"></i>Inventory</li>
         <li class="registrationRequests"><i class="fa fa-question"></i>All Products</li>
         <li class="registrationRequests"><i class="fa fa-users"></i>Categories</li>
+        <li class="registrationRequests"><i class="fa fa-users"></i>Downloads</li>
+        <li class="registrationRequests"><i class="fa fa-users"></i>Reviews</li>
         <li class="usersSettings"><i class="fa fa-cog"></i>Tags</li>
         <li class="usersSettings"><i class="fa fa-cog"></i>Manufacturers</li>
       <ul>
     </div>
   </div>
   <div class="set">
-    <a href="#">
-      Comunications 
+    <p class="menu-heading">
+      Projects 
       <i class="fa fa-plus"></i>
-    </a>
+    </p>
     <div class="content">
       <ul>
-        <li class="registrationRequests"><i class="fa fa-question"></i>Messages</li>
+        <li class="usersSettings"><i class="fa fa-cog"></i>All Projects</li>
+        <li class="registrationRequests"><i class="fa fa-question"></i>Sections</li>
+        <li class="registrationRequests"><i class="fa fa-users"></i>Tasks</li>
+        <li class="registrationRequests"><i class="fa fa-users"></i>Downloads</li>
+      <ul>
+    </div>
+  </div>
+  <div class="set">
+    <p class="menu-heading">
+      Comunications 
+      <i class="fa fa-plus"></i>
+    </p>
+    <div class="content">
+      <ul>
+        <li class="registrationRequests" onclick="openMessagesPage()"><i class="fa fa-question"></i>Messages</li>
         <li class="registrationRequests"><i class="fa fa-users"></i>Contact Messages</li>
         <li class="registrationRequests"><i class="fa fa-users"></i>All Messages</li>
         <li class="usersSettings"><i class="fa fa-cog"></i>Settings</li>
@@ -90,23 +106,24 @@
     </div>
   </div>
   <div class="set">
-    <a href="#">
+    <p class="menu-heading">
       Users 
       <i class="fa fa-plus"></i> 
-    </a>
+    </p>
     <div class="content">
       <ul>
         <li class="registrationRequests" onclick="openRegisterRequestPage()"><i class="fa fa-question"></i>Registration Requests</li>
-        <li class="allUsersPage"><i class="fa fa-users"></i>All users</li>
+        <li class="allUsersPage" onclick="openAllUsersPage()"><i class="fa fa-users"></i>All users</li>
+        <li class="usersSettings"><i class="fa fa-user"></i>My Profile</li>
         <li class="usersSettings"><i class="fa fa-cog"></i>Settings</li>
       <ul>
     </div>
   </div>
   <div class="set">
-    <a href="#">
+    <p class="menu-heading">
       System 
       <i class="fa fa-plus"></i> 
-    </a>
+    </p>
     <div class="content">
       <ul>
         <li class="locationsPage"><i class="fa fa-question"></i>Locations</li>
@@ -117,15 +134,15 @@
     </div>
   </div>
   <div class="set">
-    <a href="#">
+    <p class="menu-heading">
       Reports 
       <i class="fa fa-plus"></i> 
-    </a>
+    </p>
     <div class="content">
       <ul>
         <li class="locationsPage"><i class="fa fa-question"></i>Reports</li>
         <li class="invocesPage"><i class="fa fa-users"></i>Invoices</li>
-        <li class="taxSettingsPage"><i class="fa fa-question"></i>Who's online</li>
+        <li class="taxSettingsPage" onclick="openOnelineUsersPage()"><i class="fa fa-question"></i>Who's online</li>
         <li class="loginSettingsPage"><i class="fa fa-users"></i>Statistics</li>
         <li class="allNotificationsPage" onclick="openAllNotificationsPage()"><i class="fa fa-users"></i>All Notifications</li>
       <ul>
@@ -133,7 +150,20 @@
   </div>
 </div>
 
+<div class="serverStatus">
+<?php
+ for ($i = 1; $i <= 3; $i++) {
+  $stresTest = str_repeat("159as591das915asd", 9999999);
+  $stresTest2 = str_repeat("159as591das915asd", 9999999);
+  $stresTest = round(((memory_get_usage()/1024)/1024),1);
+}
 
+?>
+<p><span class="description">In Use:</span> <span class="result"><?php echo round(((memory_get_usage()/1024)/1024),1); ?>MB</span></p>
+<p><span class="description">Peak usage: </span> <span class="result"><?php echo round(((memory_get_peak_usage()/1024)/1024),1); ?>MB</span></p>
+<p><span class="description">Stress string lenght: </span> <span class="result"><?php echo $stresTest; ?>chars</span></p>
+
+</div>
 
 
 </div>
@@ -335,7 +365,7 @@
     display: block;
     width: 100%;
 }
-.set > a{
+.set > .menu-heading{
     display: block;
     padding: 10px 15px;
     text-decoration: none;
@@ -347,16 +377,17 @@
     transition: all 0.2s linear;
     float: left;
     width: calc(100% - 30px);
+    margin: 0;
 }
-.set > a i{
+.set > .menu-heading i{
   float: right;
   margin-top: 2px;
 }
-.set > a.active{
+.set > .menu-heading.active{
   background-color:#3399cc;
   color: #fff;
 }
-.set > a:hover {
+.set > .menu-heading:hover {
     background: rgba(255, 255, 255, .15);
 }
 .mainMenuSide .content{

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2019 at 09:11 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: May 20, 2020 at 11:35 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `loginsystemdb`
+-- Database: `ultiuser`
 --
 
 -- --------------------------------------------------------
@@ -34,8 +34,8 @@ CREATE TABLE `all_notifications` (
   `came_from` text NOT NULL,
   `user_id` bigint(20) NOT NULL,
   `notification_info` text NOT NULL,
-  `notification_timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `notification_dismiss` int(11) NOT NULL DEFAULT '1',
+  `notification_timestamp` datetime NOT NULL DEFAULT current_timestamp(),
+  `notification_dismiss` int(11) NOT NULL DEFAULT 1,
   `notification_ip` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -158,7 +158,70 @@ INSERT INTO `all_notifications` (`notification_id`, `notification_level`, `came_
 (138, 0, 'Login', 52, 'Sucessful, info match.', '2019-04-02 09:01:16', 1, '::1'),
 (139, 0, 'Logout', 52, 'Session sucessfully terminated!', '2019-04-02 09:04:28', 1, '::1'),
 (140, 0, 'Login', 52, 'Sucessful, info match.', '2019-04-02 09:04:35', 1, '::1'),
-(141, 0, 'Register Request', 52, 'Approved succesfully 61', '2019-04-02 09:06:34', 1, '::1');
+(141, 0, 'Register Request', 52, 'Approved succesfully 61', '2019-04-02 09:06:34', 1, '::1'),
+(142, 2, 'Login', 63, 'Account not active yet.', '2020-02-01 19:41:33', 1, '::1'),
+(143, 2, 'Login', 71, 'Account not active yet.', '2020-02-01 19:41:37', 1, '::1'),
+(144, 3, 'Login', 0, 'Wrong information entered!', '2020-02-01 19:41:46', 1, '::1'),
+(145, 3, 'Login', 0, 'Wrong information entered!', '2020-02-01 19:41:59', 1, '::1'),
+(146, 3, 'Login', 0, 'Wrong information entered!', '2020-02-01 19:42:11', 1, '::1'),
+(147, 0, 'Login', 56, 'Sucessful, info match.', '2020-02-01 19:42:48', 1, '::1'),
+(148, 0, 'Register Request', 56, 'Approved succesfully 63', '2020-02-01 19:43:12', 1, '::1'),
+(149, 0, 'Logout', 56, 'Session sucessfully terminated!', '2020-02-01 19:43:33', 1, '::1'),
+(150, 0, 'Login', 63, 'Sucessful, info match.', '2020-02-01 19:43:38', 1, '::1'),
+(151, 0, 'Logout', 63, 'Session sucessfully terminated!', '2020-02-01 19:44:06', 1, '::1'),
+(152, 0, 'Login', 63, 'Sucessful, info match.', '2020-02-01 19:44:10', 1, '::1'),
+(153, 0, 'Logout', 63, 'Session sucessfully terminated!', '2020-02-01 19:44:28', 1, '::1'),
+(154, 0, 'Login', 63, 'Sucessful, info match.', '2020-02-01 19:44:31', 1, '::1'),
+(155, 0, 'Logout', 63, 'Session sucessfully terminated!', '2020-02-23 15:54:49', 1, '::1'),
+(156, 4, 'Login', 0, 'Please fill in the whole form.', '2020-02-23 15:55:46', 1, '::1'),
+(157, 3, 'Register', 0, 'Please fill in the form right way.', '2020-02-23 15:55:49', 1, '::1'),
+(158, 3, 'Register', 0, 'Please fill in the form right way.', '2020-02-23 15:55:50', 1, '::1'),
+(159, 3, 'Register', 0, 'Please fill in the form right way.', '2020-02-23 15:55:50', 1, '::1'),
+(160, 2, 'Login', 71, 'Account not active yet.', '2020-02-23 15:56:40', 1, '::1'),
+(161, 0, 'Login', 63, 'Sucessful, info match.', '2020-02-23 15:56:43', 1, '::1'),
+(162, 0, 'Login', 63, 'Sucessful, info match.', '2020-02-24 12:34:36', 1, '::1'),
+(163, 0, 'Logout', 63, 'Session sucessfully terminated!', '2020-03-15 11:03:16', 1, '::1'),
+(164, 0, 'Login', 63, 'Sucessful, info match.', '2020-03-15 11:03:23', 1, '::1'),
+(165, 0, 'Login', 63, 'Sucessful, info match.', '2020-03-15 11:41:18', 1, '::1'),
+(166, 2, 'Login', 71, 'Account not active yet.', '2020-03-15 11:54:04', 1, '::1'),
+(167, 0, 'Register Request', 63, 'Approved succesfully 71', '2020-03-15 11:54:12', 1, '::1'),
+(168, 0, 'Login', 71, 'Sucessful, info match.', '2020-03-15 11:54:19', 1, '::1'),
+(169, 0, 'Login', 71, 'Sucessful, info match.', '2020-03-15 12:04:36', 1, '::1'),
+(170, 3, 'Login', 0, 'Wrong information entered!', '2020-03-15 12:05:35', 1, '::1'),
+(171, 2, 'Login', 66, 'Account not active yet.', '2020-03-15 12:05:39', 1, '::1'),
+(172, 0, 'Register Request', 63, 'Approved succesfully 66', '2020-03-15 12:05:42', 1, '::1'),
+(173, 0, 'Login', 66, 'Sucessful, info match.', '2020-03-15 12:05:43', 1, '::1'),
+(174, 0, 'Login', 71, 'Sucessful, info match.', '2020-03-15 13:47:33', 1, '::1'),
+(175, 0, 'Register Request', 63, 'Approved succesfully 67', '2020-03-15 13:48:59', 1, '::1'),
+(176, 0, 'Register Request', 63, 'Approved succesfully 73', '2020-03-15 13:49:19', 1, '::1'),
+(177, 0, 'Login', 71, 'Sucessful, info match.', '2020-03-15 13:51:50', 1, '::1'),
+(178, 0, 'Logout', 71, 'Session sucessfully terminated!', '2020-03-15 13:52:02', 1, '::1'),
+(179, 0, 'Login', 63, 'Sucessful, info match.', '2020-03-15 13:52:05', 1, '::1'),
+(180, 0, 'Login', 63, 'Sucessful, info match.', '2020-03-15 13:53:15', 1, '::1'),
+(181, 0, 'Login', 66, 'Sucessful, info match.', '2020-03-15 13:53:34', 1, '::1'),
+(182, 0, 'Logout', 63, 'Session sucessfully terminated!', '2020-03-15 13:55:09', 1, '::1'),
+(183, 0, 'Login', 71, 'Sucessful, info match.', '2020-03-15 13:55:49', 1, '::1'),
+(184, 0, 'Logout', 71, 'Session sucessfully terminated!', '2020-03-15 13:55:58', 1, '::1'),
+(185, 0, 'Login', 66, 'Sucessful, info match.', '2020-03-15 13:56:02', 1, '::1'),
+(186, 0, 'Logout', 66, 'Session sucessfully terminated!', '2020-03-15 13:57:31', 1, '::1'),
+(187, 0, 'Login', 66, 'Sucessful, info match.', '2020-03-15 13:57:34', 1, '::1'),
+(188, 0, 'Register Request', 66, 'Approved succesfully 68', '2020-03-15 14:00:00', 1, '::1'),
+(189, 0, 'Register Request', 66, 'Approved succesfully 70', '2020-03-15 14:01:03', 1, '::1'),
+(190, 0, 'Register Request', 66, 'Approved succesfully 74', '2020-03-15 14:01:03', 1, '::1'),
+(191, 0, 'Register Request', 66, 'Approved succesfully 84', '2020-03-15 14:01:06', 1, '::1'),
+(192, 0, 'Logout', 66, 'Session sucessfully terminated!', '2020-03-19 20:21:55', 1, '::1'),
+(193, 0, 'Login', 71, 'Sucessful, info match.', '2020-03-19 20:22:03', 1, '::1'),
+(194, 0, 'Logout', 71, 'Session sucessfully terminated!', '2020-03-19 20:24:12', 1, '::1'),
+(195, 0, 'Login', 71, 'Sucessful, info match.', '2020-03-25 15:22:38', 1, '::1'),
+(196, 0, 'Login', 71, 'Sucessful, info match.', '2020-05-17 12:24:57', 1, '::1'),
+(197, 0, 'Register Request', 71, 'Approved succesfully 83', '2020-05-17 12:25:56', 1, '::1'),
+(198, 0, 'Register Request', 71, 'Approved succesfully 82', '2020-05-17 12:25:56', 1, '::1'),
+(199, 0, 'Register Request', 71, 'Approved succesfully 81', '2020-05-17 12:25:57', 1, '::1'),
+(200, 0, 'Register Request', 71, 'Approved succesfully 89', '2020-05-17 12:25:58', 1, '::1'),
+(201, 0, 'Login', 63, 'Sucessful, info match.', '2020-05-17 12:26:52', 1, '::1'),
+(202, 0, 'Logout', 71, 'Session sucessfully terminated!', '2020-05-20 23:24:27', 1, '::1'),
+(203, 0, 'Login', 71, 'Sucessful, info match.', '2020-05-20 23:24:32', 1, '::1'),
+(204, 0, 'Register Request', 71, 'Approved succesfully 92', '2020-05-20 23:25:00', 1, '::1');
 
 -- --------------------------------------------------------
 
@@ -178,11 +241,11 @@ CREATE TABLE `users_info` (
   `user_picture` text NOT NULL,
   `user_password` text NOT NULL,
   `user_salt` varchar(10) NOT NULL,
-  `user_register_datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `user_register_datetime` datetime NOT NULL DEFAULT current_timestamp(),
   `user_work_location` int(11) NOT NULL,
   `user_power_level` int(11) NOT NULL,
   `user_last_login_datetime` datetime NOT NULL,
-  `user_status` int(2) NOT NULL DEFAULT '0'
+  `user_status` int(2) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -201,41 +264,60 @@ INSERT INTO `users_info` (`user_id`, `username`, `user_email`, `user_first_name`
 (60, 'userDemo11234', 'eee@eee.com', '', '', '', '', '', '', 'userDemo', '', '2019-03-27 17:54:20', 0, 0, '0000-00-00 00:00:00', 1),
 (61, 'userDemo112345', 'eee@eee.com', '', '', '', '', '', '', 'userDemo', '', '2019-03-27 17:54:24', 0, 0, '0000-00-00 00:00:00', 1),
 (62, 'userDemo1123451', 'eee@eee.com', '', '', '', '', '', '', 'userDemo11', '', '2019-03-27 17:54:40', 0, 0, '0000-00-00 00:00:00', 1),
-(63, '123123', '1231231@mail.cop', '', '', '', '', '', '', '123123', '', '2019-03-28 20:10:46', 0, 0, '0000-00-00 00:00:00', 0),
+(63, '123123', '1231231@mail.cop', '', '', '', '', '', '', '123123', '', '2019-03-28 20:10:46', 0, 0, '0000-00-00 00:00:00', 1),
 (64, '123123123', '1231231@mail.cop', '', '', '', '', '', '', '123', '', '2019-03-28 20:10:53', 0, 0, '0000-00-00 00:00:00', 0),
 (65, '23432', '123123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-28 20:39:20', 0, 0, '0000-00-00 00:00:00', 0),
-(66, '321', '123123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-28 20:43:51', 0, 0, '0000-00-00 00:00:00', 0),
-(67, '123123333', '123123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-28 22:44:25', 0, 0, '0000-00-00 00:00:00', 0),
-(68, '1231233', '123123@mail.com', '', '', '', '', '', '', '123123', '', '2019-03-29 02:37:59', 0, 0, '0000-00-00 00:00:00', 0),
+(66, '321', '123123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-28 20:43:51', 0, 0, '0000-00-00 00:00:00', 1),
+(67, '123123333', '123123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-28 22:44:25', 0, 0, '0000-00-00 00:00:00', 1),
+(68, '1231233', '123123@mail.com', '', '', '', '', '', '', '123123', '', '2019-03-29 02:37:59', 0, 0, '0000-00-00 00:00:00', 1),
 (69, '321123', '123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-29 02:51:16', 0, 0, '0000-00-00 00:00:00', 0),
-(70, '123321', '123123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-29 12:01:19', 0, 0, '0000-00-00 00:00:00', 0),
-(71, '123', '123123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-29 12:04:38', 0, 0, '0000-00-00 00:00:00', 0),
+(70, '123321', '123123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-29 12:01:19', 0, 0, '0000-00-00 00:00:00', 1),
+(71, '123', '123123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-29 12:04:38', 0, 0, '0000-00-00 00:00:00', 1),
 (72, '1231', '123123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-29 12:07:49', 0, 0, '0000-00-00 00:00:00', 0),
-(73, '1233', '123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-29 15:03:33', 0, 0, '0000-00-00 00:00:00', 0),
-(74, '1231231233', '123@mail.com', '', '', '', '', '', '', '12341', '', '2019-03-29 18:08:04', 0, 0, '0000-00-00 00:00:00', 0),
+(73, '1233', '123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-29 15:03:33', 0, 0, '0000-00-00 00:00:00', 1),
+(74, '1231231233', '123@mail.com', '', '', '', '', '', '', '12341', '', '2019-03-29 18:08:04', 0, 0, '0000-00-00 00:00:00', 1),
 (75, '1233211', '123@mail.com', '', '', '', '', '', '', '12333', '', '2019-03-29 22:45:47', 0, 0, '0000-00-00 00:00:00', 0),
 (76, '123321123', '123@123.com', '', '', '', '', '', '', '123', '', '2019-03-31 04:27:22', 0, 0, '0000-00-00 00:00:00', 0),
 (77, 'asdasdasd', 'asdasdasd@asdasdasd.aa', '', '', '', '', '', '', 'asdasdasd', '', '2019-03-31 04:29:01', 0, 0, '0000-00-00 00:00:00', 0),
 (78, 'qweasdzxc', 'qweasdzxc@aaa.com', '', '', '', '', '', '', 'qweasdzxc', '', '2019-03-31 04:39:34', 0, 0, '0000-00-00 00:00:00', 0),
 (79, '159263159263', '159263159263@asd.com', '', '', '', '', '', '', '159263159263', '', '2019-03-31 04:41:51', 0, 0, '0000-00-00 00:00:00', 0),
 (80, 'rrrsad', 'rrrsad@mail.com', '', '', '', '', '', '', 'rrrsad', '', '2019-03-31 04:43:37', 0, 0, '0000-00-00 00:00:00', 0),
-(81, 'zzzzzzz', 'zzzzzzz@zzzz.zz', '', '', '', '', '', '', 'zzzzzzz', '', '2019-03-31 04:47:41', 0, 0, '0000-00-00 00:00:00', 0),
-(82, '11111111', '11111111@mail.com', '', '', '', '', '', '', '11111111', '', '2019-03-31 04:52:28', 0, 0, '0000-00-00 00:00:00', 0),
-(83, 'ccccc', 'ccccc@cc.cc', '', '', '', '', '', '', 'ccccc', '', '2019-03-31 05:00:19', 0, 0, '0000-00-00 00:00:00', 0),
-(84, 'vvvvvvv', 'vvvvvvv@mmm.com', '', '', '', '', '', '', 'vvvvvvv', '', '2019-03-31 05:02:21', 0, 0, '0000-00-00 00:00:00', 0),
+(81, 'zzzzzzz', 'zzzzzzz@zzzz.zz', '', '', '', '', '', '', 'zzzzzzz', '', '2019-03-31 04:47:41', 0, 0, '0000-00-00 00:00:00', 1),
+(82, '11111111', '11111111@mail.com', '', '', '', '', '', '', '11111111', '', '2019-03-31 04:52:28', 0, 0, '0000-00-00 00:00:00', 1),
+(83, 'ccccc', 'ccccc@cc.cc', '', '', '', '', '', '', 'ccccc', '', '2019-03-31 05:00:19', 0, 0, '0000-00-00 00:00:00', 1),
+(84, 'vvvvvvv', 'vvvvvvv@mmm.com', '', '', '', '', '', '', 'vvvvvvv', '', '2019-03-31 05:02:21', 0, 0, '0000-00-00 00:00:00', 1),
 (85, 'rrrrrrrrr', 'rrrrrrrrr@mail.com', '', '', '', '', '', '', 'rrrrrrrrr', '', '2019-03-31 05:03:13', 0, 0, '0000-00-00 00:00:00', 0),
 (86, 'qweasd123', '123123@mail.com', '', '', '', '', '', '', 'qweasd123', '', '2019-03-31 19:11:44', 0, 0, '0000-00-00 00:00:00', 1),
 (87, 'qweasd123111', '123123@mail.com', '', '', '', '', '', '', 'qweasd123111', '', '2019-03-31 19:14:25', 0, 0, '0000-00-00 00:00:00', 1),
 (88, '987654321', '123123@mail.com', '', '', '', '', '', '', '987654321', '', '2019-03-31 19:16:16', 0, 0, '0000-00-00 00:00:00', 1),
-(89, '9876543211', '123123@mail.com', '', '', '', '', '', '', '9876543211', '', '2019-03-31 19:23:51', 0, 0, '0000-00-00 00:00:00', 0),
+(89, '9876543211', '123123@mail.com', '', '', '', '', '', '', '9876543211', '', '2019-03-31 19:23:51', 0, 0, '0000-00-00 00:00:00', 1),
 (90, '98765432111', '123123@MAIL.COM', '', '', '', '', '', '', '98765432111', '', '2019-03-31 19:25:09', 0, 0, '0000-00-00 00:00:00', 0),
 (91, '12311111111111', '123@mail.com', '', '', '', '', '', '', '12311111111111', '', '2019-03-31 19:31:55', 0, 0, '0000-00-00 00:00:00', 0),
-(92, '1231111111111112311111111111', '123@mail.com', '', '', '', '', '', '', '1231111111111112311111111111', '', '2019-03-31 19:33:00', 0, 0, '0000-00-00 00:00:00', 0),
+(92, '1231111111111112311111111111', '123@mail.com', '', '', '', '', '', '', '1231111111111112311111111111', '', '2019-03-31 19:33:00', 0, 0, '0000-00-00 00:00:00', 1),
 (93, '1111111@ma.ma', '1111111@ma.ma', '', '', '', '', '', '', '1111111@ma.ma', '', '2019-03-31 19:33:38', 0, 0, '0000-00-00 00:00:00', 0),
 (94, '22222222', '1111111@aaa.com', '', '', '', '', '', '', '22222222', '', '2019-03-31 19:35:15', 0, 0, '0000-00-00 00:00:00', 0),
 (95, 'zzzzzzzzzzzzz', '12aaa@mail.com', '', '', '', '', '', '', 'zzzzzzzzzzzzz', '', '2019-03-31 19:42:30', 0, 0, '0000-00-00 00:00:00', 0),
 (96, '12311', '123@mail.com', '', '', '', '', '', '', '123', '', '2019-03-31 20:18:14', 0, 0, '0000-00-00 00:00:00', 0),
 (97, '11111111111', '123123@mail.com', '', '', '', '', '', '', '11111111111', '', '2019-04-02 08:55:18', 0, 0, '0000-00-00 00:00:00', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_online`
+--
+
+CREATE TABLE `users_online` (
+  `online_id` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `last_report` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users_online`
+--
+
+INSERT INTO `users_online` (`online_id`, `user_id`, `last_report`) VALUES
+(15, 71, '2020-05-20 21:35:38');
 
 -- --------------------------------------------------------
 
@@ -257,7 +339,7 @@ CREATE TABLE `user_settings` (
 
 INSERT INTO `user_settings` (`setting_id`, `user_id`, `color_scheme`, `background_type`, `user_language`) VALUES
 (1, 52, 'Dark', 2, 'en'),
-(2, 71, 'Light', 2, 'en'),
+(2, 71, 'Dark', 2, 'en'),
 (3, 76, 'Dark', 2, 'en'),
 (4, 77, 'Dark', 0, 'en'),
 (5, 78, 'Dark', 0, 'en'),
@@ -269,7 +351,10 @@ INSERT INTO `user_settings` (`setting_id`, `user_id`, `color_scheme`, `backgroun
 (11, 84, 'Dark', 0, 'en'),
 (12, 85, 'Dark', 2, 'en'),
 (13, 87, 'Dark', 0, 'en'),
-(14, 95, 'Light', 1, 'en');
+(14, 95, 'Light', 1, 'en'),
+(15, 56, 'Dark', 0, 'en'),
+(16, 63, 'Dark', 2, 'en'),
+(17, 66, 'Dark', 0, 'en');
 
 --
 -- Indexes for dumped tables
@@ -288,6 +373,12 @@ ALTER TABLE `users_info`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `users_online`
+--
+ALTER TABLE `users_online`
+  ADD PRIMARY KEY (`online_id`);
+
+--
 -- Indexes for table `user_settings`
 --
 ALTER TABLE `user_settings`
@@ -301,7 +392,7 @@ ALTER TABLE `user_settings`
 -- AUTO_INCREMENT for table `all_notifications`
 --
 ALTER TABLE `all_notifications`
-  MODIFY `notification_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `notification_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
 
 --
 -- AUTO_INCREMENT for table `users_info`
@@ -310,10 +401,16 @@ ALTER TABLE `users_info`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
+-- AUTO_INCREMENT for table `users_online`
+--
+ALTER TABLE `users_online`
+  MODIFY `online_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT for table `user_settings`
 --
 ALTER TABLE `user_settings`
-  MODIFY `setting_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `setting_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
