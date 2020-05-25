@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$username = "login_rework_20200520";
-$password = "login_rework_20200520";
-$dbname = "login_rework_20200520";
+$username = "ulti_20200525";
+$password = "LUSfsQBxnnHJ9DnD";
+$dbname = "ulti_20200525";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
